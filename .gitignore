@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs/ObjectCodeExporter/v15
+/packages
+/ObjectCodeExporter.Visualizer/obj
+/ObjectCodeExporter.Visualizer/bin/Debug
+/ObjectCodeExporter.test/obj
+/ObjectCodeExporter.test/bin/Debug
+/ObjectCodeExporter.Package/obj
+/ObjectCodeExporter.Package/bin/Debug
+/ObjectCodeExporter/obj
+/ObjectCodeExporter/bin/Debug

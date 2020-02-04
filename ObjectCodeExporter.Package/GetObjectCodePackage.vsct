@@ -36,8 +36,8 @@
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
     <Groups>
-      <Group guid="guidGetObjectCodePackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      <Group guid="guidGetObjectCodePackageCmdSet" id="EditorContextMenuGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
       </Group>
     </Groups>
 
@@ -53,10 +53,9 @@
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
       <Button guid="guidGetObjectCodePackageCmdSet" id="GetObjectCodeId" priority="0x0100" type="Button">
-        <Parent guid="guidGetObjectCodePackageCmdSet" id="MyMenuGroup" />
-        <Icon guid="guidImages" id="bmpPic1" />
+        <Parent guid="guidGetObjectCodePackageCmdSet" id="EditorContextMenuGroup" />
         <Strings>
-          <ButtonText>Invoke GetObjectCode</ButtonText>
+          <ButtonText>Get Object Code</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -78,7 +77,7 @@
 
     <!-- This is the guid used to group the menu commands together -->
     <GuidSymbol name="guidGetObjectCodePackageCmdSet" value="{85d53e8b-3e40-4593-aac8-3bfa42f1ec31}">
-      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="EditorContextMenuGroup" value="0x1020" />
       <IDSymbol name="GetObjectCodeId" value="0x0100" />
     </GuidSymbol>
 
