@@ -1,11 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ObjectLiteralVisualizer;
-using ObjectLiteralVisualizer.Test.EntitySource;
+using ObjectCodeExporter.Test.EntitySource;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ObjectCodeExporter.Tests
 {
@@ -140,6 +136,30 @@ namespace ObjectCodeExporter.Tests
             List<Customer> test = new List<Customer>();
             test.Add(new Customer());
             test.Add(new Customer());
+
+            ObjectCodeExporter olt = new ObjectCodeExporter();
+            Assert.AreEqual(need, olt.Translate(test));
+        }
+
+        [TestMethod]
+        public void TranslateEntityWithEnum()
+        {
+            string need = $"EntityWithEnum entityWithEnumTranslated0 = new EntityWithEnum();{Environment.NewLine}entityWithEnumTranslated0.MyProperty = ObjectCodeExporter.Test.EntitySource.MyEnumV2.Value2;{Environment.NewLine}";
+            EntityWithEnum test = new EntityWithEnum();
+            test.MyProperty = MyEnumV2.Value2;
+
+            ObjectCodeExporter olt = new ObjectCodeExporter();
+            Assert.AreEqual(need, olt.Translate(test));
+        }
+
+        [TestMethod]
+        public void TranslateEntityWithEnumFlagged()
+        {
+            string need = $"EntityWithFlaggedEnum entityWithFlaggedEnumTranslated0 = new EntityWithFlaggedEnum();{Environment.NewLine}entityWithFlaggedEnumTranslated0.MyProperty = ObjectCodeExporter.Test.EntitySource.MyEnum.Value2;{Environment.NewLine}entityWithFlaggedEnumTranslated0.MyProperty2 = ObjectCodeExporter.Test.EntitySource.MyEnum.Value1|ObjectCodeExporter.Test.EntitySource.MyEnum.Value2|ObjectCodeExporter.Test.EntitySource.MyEnum.Value4;{Environment.NewLine}";
+            EntityWithFlaggedEnum test = new EntityWithFlaggedEnum();
+            test.MyProperty = MyEnum.Value2;
+            test.MyProperty2 = MyEnum.Value2 | MyEnum.Value4 | MyEnum.Value1;
+
 
             ObjectCodeExporter olt = new ObjectCodeExporter();
             Assert.AreEqual(need, olt.Translate(test));

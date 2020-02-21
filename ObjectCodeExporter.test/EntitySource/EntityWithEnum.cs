@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace ObjectCodeExporter.Test.EntitySource
 {
-    public class EntityWithChildEntity
+    public class EntityWithEnum
     {
-        public ChildEntity MyProperty { get; set; } = new ChildEntity();
+        public MyEnumV2 MyProperty { get; set; }
+
     }
 
-    public class ChildEntity
+    public enum MyEnumV2
     {
-        public int MyProperty { get; set; } = 10;
+        Value1,
+        Value2,
+        Value3,
+        Value4,
+        Value8
     }
 }

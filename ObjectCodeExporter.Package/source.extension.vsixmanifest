@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="ObjectCodeExporter.Package.ae6abe0a-aa4d-42a0-94c1-9e17a1448893" Version="1.0" Language="en-US" Publisher="Thomas NOIRET" />
+        <Identity Id="ObjectCodeExporter.Package.ae6abe0a-aa4d-42a0-94c1-9e17a1448893" Version="1.1" Language="en-US" Publisher="Thomas NOIRET" />
         <DisplayName>ObjectCodeExporter.Package</DisplayName>
         <Description xml:space="preserve">Package to install ObjectCodeExporter visualizer</Description>
         <License>Licence.txt</License>

@@ -8,8 +8,8 @@
     <ProjectGuid>{0DE56BED-A784-42E4-8876-10F675C99762}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ObjectCodeExporter.test</RootNamespace>
-    <AssemblyName>ObjectCodeExporter.test</AssemblyName>
+    <RootNamespace>ObjectCodeExporter.Test</RootNamespace>
+    <AssemblyName>ObjectCodeExporter.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,11 +49,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitySource\EntityWithFlaggedEnum.cs" />
     <Compile Include="EntitySource\Customer.cs" />
     <Compile Include="EntitySource\EmptyEntity.cs" />
     <Compile Include="EntitySource\EntityWithAllBaseTypes.cs" />
     <Compile Include="EntitySource\EntityWithChildEntity.cs" />
     <Compile Include="EntitySource\EntityWithDictionary.cs" />
+    <Compile Include="EntitySource\EntityWithEnum.cs" />
     <Compile Include="EntitySource\EntityWithListOfChild.cs" />
     <Compile Include="EntitySource\EntityWithListOfChildWithListOfOtherChild.cs" />
     <Compile Include="EntitySource\EntityWithListOfInt.cs" />

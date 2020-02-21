@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ObjectLiteralVisualizer.Test.EntitySource
+namespace ObjectCodeExporter.Test.EntitySource
 {
     public class EntityWithDictionary
     {

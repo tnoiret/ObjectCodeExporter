@@ -173,7 +173,16 @@ namespace ObjectCodeExporter
             }
             else if (obj is Enum)
             {
-                result = $"{obj.GetType().FullName.Replace('+','.')}.{obj}";
+
+                string fullName = obj.GetType().FullName.Replace('+', '.');
+                foreach (var item in ((Enum)obj).GetIndividualFlags())
+                {
+                    if (!String.IsNullOrEmpty(result))
+                        result += '|';
+                    result += $"{fullName}.{item}";
+                }
+
+
             }
             else if (obj is Guid guid)
             {
@@ -203,7 +212,7 @@ namespace ObjectCodeExporter
                 string currentAccessPath = _objectsPath.Last();
                 if (currentProperty.SetMethod == null || !currentProperty.SetMethod.IsPrivate)
                 {
-                    _lines.Add($"{currentAccessPath}.{currentProperty.Name} = new {currentProperty.PropertyType.GetRealTypeName()}()");
+                    _lines.Add($"{currentAccessPath}.{currentProperty.Name} = new {currentProperty.PropertyType.GetRealTypeName()}();");
                 }
 
                 // If set are private (like CA XXXXX) need do not create instance
